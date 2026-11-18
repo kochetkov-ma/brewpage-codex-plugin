@@ -17,19 +17,27 @@ scripts) is MIT-licensed.
 | Part | Path | What it does |
 |------|------|--------------|
 | Manifest | `.codex-plugin/plugin.json` | Plugin metadata, skills folder, MCP config, icon |
-| Skill | `skills/brewpage-publish/` | Detects the content type, asks for namespace and password, uploads through `scripts/brewpage-run.sh`, returns the link and the management link |
+| Skill | `skills/brewpage-publish/` | Prepares drafts locally and routes authorized publishes and updates through BrewPage MCP or the bundled runner |
 | MCP server | `.mcp.json` | The BrewPage remote MCP server, `https://brewpage.app/mcp` (Streamable HTTP, no sign-in) |
 | Icon | `assets/icon.svg` | BrewPage mark |
 
 The skill is a copy of the MIT-licensed BrewPage publishing skill from
 [kochetkov-ma/claude-brewcode](https://github.com/kochetkov-ma/claude-brewcode)
-(`openclaw/brewpage-publish`, commit `4825515919e33266eb8f44587f161040a2dac9ae`),
-with its User-Agent set to `brewpage-codex/0.1.1`.
+(`openclaw/brewpage-publish`, commit `9581676113c40c7516504dada2b581fb761b0fec`),
+with its User-Agent set to `brewpage-codex/0.2.0`. See [the member inventory](PROVENANCE.json).
+
+For a skill refresh, use `python3 tools/vendor-skill.py vendor --upstream
+../claude-brewcode --commit <reviewed-full-commit>` after setting the new version
+in `.codex-plugin/plugin.json`. The script copies the OpenClaw skill and records
+its source revision, source and installed member hashes, file modes, and versioned
+Codex User-Agent in `PROVENANCE.json`. Recheck the refreshed package with
+`python3 tools/vendor-skill.py check --upstream ../claude-brewcode`.
 
 ## Status
 
-Version 0.1.1. The manifest and bundle pass the HOL Plugin Scanner (see the
-workflow in `.github/workflows/`); installation inside Codex has not been tested yet.
+Version 0.2.0 is a local release candidate. Codex CLI 0.169.0 installed the
+candidate in an isolated profile and matched all eleven skill members. The HOL
+Plugin Scanner result for 0.1.1 applies to that release. The 0.2.0 scan is pending.
 
 ## Use it
 
@@ -37,18 +45,20 @@ Ask in natural language:
 
 ```
 Publish report.html to BrewPage and give me the link
-Share this Markdown summary as a BrewPage page that expires in 7 days
-Upload the ./dist folder to BrewPage as a site
+Draft an RSVP form with BrewPage Page data and leave it local
+Update the saved BrewPage publication with ./dist
 ```
 
-The skill asks for a namespace (`public` lists the page in the gallery; a private
-slug, the default, keeps it unlisted) and an optional password file, uploads, and
-gives you the link and the management link. See [the skill workflow](skills/brewpage-publish/SKILL.md).
+The skill uses the available BrewPage MCP tools for supported operations. When a
+permitted HTTPS fallback is needed, it can upload local bytes through the bundled
+runner. Drafts stay local. For a write, the skill resolves publication and owner
+choices before sending anything. See [the skill workflow](skills/brewpage-publish/SKILL.md).
 
 | Content | API |
 |---------|-----|
 | Text, Markdown, `.md` file | `POST /api/html?format=markdown` |
 | Whole HTML document, `.html` file | `POST /api/html?format=html` |
+| JSON document | `POST /api/json` |
 | Any other file | `POST /api/files` |
 | Built static directory or `.zip` | `POST /api/sites` |
 
@@ -64,13 +74,12 @@ or a file is up to 5 MB; a site is up to 200 files and 20 MB. Current values:
 - An unlisted link is not private: anyone with the link can open it. Never publish
   secrets, credentials or personal data, and use `public` only for content meant to
   be found.
-- Each publish returns a management link and an owner token. Codex gives you the
-  management link with the page link; it is private: anyone who has it can edit or
-  delete the page. The skill writes the owner token to `./brewpage-history.md`
-  (mode 600, added to `.gitignore`); Codex shows it when you ask. Neither is posted
-  publicly (public page, repo, shared channel).
-- If the history file cannot be written after the page is already live, you get the
-  link, the management link and the token right away.
+- The runner can save anonymous owner proof in `./brewpage-history.md` with mode
+  `0600`. It prints reader-facing results by default. Deliver management links
+  and owner keys only through a verified private channel. Signed-in MCP publishes
+  use the connected account's publishing access.
+- A confirmed publication can still need recovery of its unsaved owner proof.
+  Follow the protected recovery steps in the [ownership recipe](skills/brewpage-publish/references/ownership.md).
 - Requests go only to `brewpage.app`.
 
 ## Requirements

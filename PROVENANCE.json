@@ -1,0 +1,75 @@
+{
+  "upstream_repository": "https://github.com/kochetkov-ma/claude-brewcode",
+  "upstream_commit": "9581676113c40c7516504dada2b581fb761b0fec",
+  "upstream_directory": "openclaw/brewpage-publish",
+  "plugin_version": "0.2.0",
+  "user_agent": "brewpage-codex/0.2.0 (+https://brewpage.app)",
+  "files": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "upstream_sha256": "4513bfc94a4eae4fe4d49f0b5727992266aa003bcfea7437d25bbf0869f04a84",
+      "sha256": "4513bfc94a4eae4fe4d49f0b5727992266aa003bcfea7437d25bbf0869f04a84"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "upstream_sha256": "349d7f383ccd423726627b49235cd4bd7870b9e7afe142e6323b1898c71ae5f4",
+      "sha256": "485654cbbf8b9a3a3483e944ff3e2ae70821c4f4dc7806a1a6a3009cb3225c7c"
+    },
+    {
+      "path": "SKILL.md",
+      "mode": "100644",
+      "upstream_sha256": "657870544e70d7dac3596a3d2dd7c07795b77e88426b2ae9487ae7559f7d107f",
+      "sha256": "00c0f926e07c6e029832c45fceb2559d3ad05e63abd9bcbb0d79e4ae9a0b1f87"
+    },
+    {
+      "path": "references/custom-domain.md",
+      "mode": "100644",
+      "upstream_sha256": "cac818abac9021f9b7d4583ccecda240dd4a71d9f74f4753c83fc2abdd80f0ef",
+      "sha256": "cac818abac9021f9b7d4583ccecda240dd4a71d9f74f4753c83fc2abdd80f0ef"
+    },
+    {
+      "path": "references/ownership.md",
+      "mode": "100644",
+      "upstream_sha256": "489f1860ce7d765ddeeccef4a52d214dcf3446a1cfc9d6c14e85ba2b5b6f451b",
+      "sha256": "489f1860ce7d765ddeeccef4a52d214dcf3446a1cfc9d6c14e85ba2b5b6f451b"
+    },
+    {
+      "path": "references/page-data.md",
+      "mode": "100644",
+      "upstream_sha256": "4d23ef55318ebeacf307e6a392aa6e6cc45441019e1f8ced446cc240c7f0e470",
+      "sha256": "4d23ef55318ebeacf307e6a392aa6e6cc45441019e1f8ced446cc240c7f0e470"
+    },
+    {
+      "path": "references/publishing.md",
+      "mode": "100644",
+      "upstream_sha256": "baa71d619e8be82b18bd7f53a9500d4b5d8b381ee32d2579f9df2ba8a7175cad",
+      "sha256": "baa71d619e8be82b18bd7f53a9500d4b5d8b381ee32d2579f9df2ba8a7175cad"
+    },
+    {
+      "path": "scripts/brewpage-lib.sh",
+      "mode": "100644",
+      "upstream_sha256": "631508cfc3dd272c0a8ef4cca85ed3b05fb6477dbdf8db60600425b974ff7225",
+      "sha256": "879b4c2ad9e1fb9dabd82dda664e022ba67869fd9d85fdf562b9fe5759e2873e"
+    },
+    {
+      "path": "scripts/brewpage-run.sh",
+      "mode": "100755",
+      "upstream_sha256": "8f9c93403105ed0fdeef0773806440580b618e4187c31217240480be6820d470",
+      "sha256": "8f9c93403105ed0fdeef0773806440580b618e4187c31217240480be6820d470"
+    },
+    {
+      "path": "scripts/history.py",
+      "mode": "100644",
+      "upstream_sha256": "e54addb5d2d21c525290633ea74b3154bab45bcdaf542802f84f194096a03b94",
+      "sha256": "e54addb5d2d21c525290633ea74b3154bab45bcdaf542802f84f194096a03b94"
+    },
+    {
+      "path": "scripts/publish.mjs",
+      "mode": "100755",
+      "upstream_sha256": "93457e37a27632e75848b7238860086cfa50eee3066f97d111c7bbf80d8e8fe4",
+      "sha256": "93457e37a27632e75848b7238860086cfa50eee3066f97d111c7bbf80d8e8fe4"
+    }
+  ]
+}
