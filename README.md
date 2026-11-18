@@ -23,7 +23,7 @@ scripts) is MIT-licensed.
 
 The skill is a copy of the MIT-licensed BrewPage publishing skill from
 [kochetkov-ma/claude-brewcode](https://github.com/kochetkov-ma/claude-brewcode)
-(`openclaw/brewpage-publish`, commit `9581676113c40c7516504dada2b581fb761b0fec`),
+(`openclaw/brewpage-publish`, commit `dd0bd63bc983fcb6c1c36f9ea3603eb014b9c97c`),
 with its User-Agent set to `brewpage-codex/0.2.0`. See [the member inventory](PROVENANCE.json).
 
 For a skill refresh, use `python3 tools/vendor-skill.py vendor --upstream
