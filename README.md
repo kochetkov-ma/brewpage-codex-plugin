@@ -33,11 +33,12 @@ its source revision, source and installed member hashes, file modes, and version
 Codex User-Agent in `PROVENANCE.json`. Recheck the refreshed package with
 `python3 tools/vendor-skill.py check --upstream ../claude-brewcode`.
 
-## Status
+## Verification
 
-Version 0.2.0 is a local release candidate. Codex CLI 0.169.0 installed the
-candidate in an isolated profile and matched all eleven skill members. The HOL
-Plugin Scanner result for 0.1.1 applies to that release. The 0.2.0 scan is pending.
+Codex CLI 0.169.0 verified all eleven skill members in an isolated 0.2.0
+candidate install. The [HOL Plugin Scanner run](https://github.com/kochetkov-ma/brewpage-codex-plugin/actions/runs/44401036536)
+succeeded on the tree of commit `a24a0014`, with two Action pinning warnings and
+no errors.
 
 ## Use it
 
