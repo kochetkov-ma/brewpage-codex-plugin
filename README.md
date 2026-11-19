@@ -18,13 +18,13 @@ scripts) is MIT-licensed.
 |------|------|--------------|
 | Manifest | `.codex-plugin/plugin.json` | Plugin metadata, skills folder, MCP config, icon |
 | Skill | `skills/brewpage-publish/` | Prepares drafts locally and routes authorized publishes and updates through BrewPage MCP or the bundled runner |
-| MCP server | `.mcp.json` | The BrewPage remote MCP server, `https://brewpage.app/mcp` (Streamable HTTP, no sign-in) |
+| MCP server | `.mcp.json` | The BrewPage remote MCP server, `https://brewpage.app/mcp`, with Streamable HTTP, anonymous access and optional account sign-in |
 | Icon | `assets/icon.svg` | BrewPage mark |
 
 The skill is a copy of the MIT-licensed BrewPage publishing skill from
 [kochetkov-ma/claude-brewcode](https://github.com/kochetkov-ma/claude-brewcode)
-(`openclaw/brewpage-publish`, commit `dd0bd63bc983fcb6c1c36f9ea3603eb014b9c97c`),
-with its User-Agent set to `brewpage-codex/0.2.0`. See [the member inventory](PROVENANCE.json).
+(`openclaw/brewpage-publish`, commit `aa178e7b63a10fd9059efeaa9820b1fdf968860a`),
+with its User-Agent set to `brewpage-codex/0.2.1`. See [the member inventory](PROVENANCE.json).
 
 For a skill refresh, use `python3 tools/vendor-skill.py vendor --upstream
 ../claude-brewcode --commit <reviewed-full-commit>` after setting the new version

@@ -55,7 +55,7 @@ For the bundled runner, substitute this installed path for `{runner}` in the pub
 {baseDir}/scripts/brewpage-run.sh
 ```
 
-The runner uses `brewpage-codex/0.2.0 (+https://brewpage.app)` for direct REST requests.
+The runner uses `brewpage-codex/0.2.1 (+https://brewpage.app)` for direct REST requests.
 
 ## Return the actual result
 
