@@ -36,9 +36,8 @@ Codex User-Agent in `PROVENANCE.json`. Recheck the refreshed package with
 ## Verification
 
 Codex CLI 0.171.0 verified all twelve skill members in an isolated 0.2.2
-candidate install. The [HOL Plugin Scanner run](https://github.com/kochetkov-ma/brewpage-codex-plugin/actions/runs/44401036536)
-succeeded on the tree of commit `a24a0014`, with two Action pinning warnings and
-no errors.
+candidate install. The [HOL Plugin Scanner run](https://github.com/kochetkov-ma/brewpage-codex-plugin/actions/runs/45058780494)
+succeeded on the tree of commit `74b97c9`, with no findings.
 
 ## Use it
 
