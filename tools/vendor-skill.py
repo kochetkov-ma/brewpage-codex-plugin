@@ -21,6 +21,7 @@ MEMBERS = {
     'references/ownership.md': '100644',
     'references/page-data.md': '100644',
     'references/publishing.md': '100644',
+    'references/rest-runner.md': '100644',
     'scripts/brewpage-lib.sh': '100644',
     'scripts/brewpage-run.sh': '100755',
     'scripts/history.py': '100644',
